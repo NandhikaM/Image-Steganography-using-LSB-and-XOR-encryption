@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Decode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #8192b1, #858688);
+            color: #ffffff;
+            text-align: center;
+            padding: 100px;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        form {
+            background-color: #58585d;
+            padding: 25px 40px;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            margin: 10px 0;
+            padding: 10px;
+            width: 250px;
+            border: none;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+
+        img {
+            margin-top: 15px;
+            border: 2px solid #fff;
+            border-radius: 8px;
+        }
+
+        pre {
+            color: #000000;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🔓 Reveal Hidden Message</h2>
+    <form method="POST" enctype="multipart/form-data">
+        Stego Image: <input type="file" name="image" required><br>
+        Key: <input type="text" name="key" required><br>
+        <input type="submit" value="Decode">
+    </form>
+
+    {% if message %}
+    <p style="color:green;">[✓] Message Found:</p>
+    <pre>{{ message }}</pre>
+    {% elif error %}
+    <p style="color:red;">[✗] Error: {{ error }}</p>
+    {% endif %}
+</body>
+
+</html>
