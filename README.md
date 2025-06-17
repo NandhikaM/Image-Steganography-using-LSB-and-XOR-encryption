@@ -11,16 +11,6 @@ This project demonstrates image steganography using the Least Significant Bit (L
 - Flask GUI (encode/decode in browser)
 
 
-📁 Project Structure
-IMG_STEGANOGRAPHY
-  ├── app.py # Flask web app
-  ├── stegano.py # Core logic for encoding/decoding
-  ├── templates/ # HTML files 
-  ├── static/uploads/ # Uploaded/stego images
-  ├── cover.png # Input image
-  ├── stego.png # Output image with message
-
-
 ⚙️ How to Run Locally
 
   1. Install dependencies:
